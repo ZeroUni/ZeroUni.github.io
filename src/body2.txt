@@ -1,6 +1,6 @@
-<p>
+<h1>
     <strong>COST EFFECTIVENESS</strong>
-</p>
+</h1>
 <p>
     While the cost of construction of a nuclear power plant costs a pretty penny, the low operation costs and the tremendous electricity output heavily outweighs the cost of the investment. For comparison, one gram of uranium can produce the same amount of electricity as three tons of coal[2], while emitting much less carbon dioxide. Nuclear power’s carbon emissions typically range between 15-50g per kilowatt hour, coal has a comparative output of 1050g per kilowatt hour[3].
 </p>

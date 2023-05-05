@@ -33,11 +33,24 @@
 </head>
 
 <body onload="createContent()">
+  <!--Set font to Lora, with an adjusting font size based on browser size with a min and max-->
   <style>
-  #intro {font-family: "Lora", serif;}
-  #body1 {font-family: "Lora", serif;}
-  #body2 {font-family: "Lora", serif;}
-  #conclusion {font-family: "Lora", serif;}
+  #intro {
+    font-family: Lora;
+    font-size: clamp(12px, 5vw, 24px);
+  }
+  #body1 {
+    font-family: Lora;
+    font-size: clamp(12px, 5vw, 24px);
+  }
+  #body2 {
+    font-family: Lora;
+    font-size: clamp(12px, 5vw, 24px);
+  }
+  #conclusion {
+    font-family: Lora;
+    font-size: clamp(12px, 5vw, 24px);
+  }
 </style>
 <div id="intro"></div>
 <div id="body1"></div>

@@ -4,46 +4,26 @@
   <title>My Page</title>
   <script>
     function createContent() {
-      var intro = `
-  <h1>Nuclear Power Intro</h1>
-
-  <p>
-    Nuclear power is the use of nuclear reactions that release nuclear energy to generate heat, which most frequently is then used in steam turbines to produce electricity in a nuclear power plant. Nuclear power can be obtained from nuclear fission, nuclear decay and nuclear fusion reactions.
-  </p>
-
-  <h2>Advantages of Nuclear Power</h2>
-
-  <ul>
-    <li>Low greenhouse gas emissions</li>
-    <li>Reliable source of energy</li>
-    <li>Low operating costs</li>
-    <li>High energy density</li>
-  </ul>
-
-  <h2>Disadvantages of Nuclear Power</h2>
-
-  <ul>
-    <li>Radioactive waste disposal</li>
-    <li>Potential for accidents</li>
-    <li>High initial capital costs</li>
-    <li>Proliferation concerns</li>
-  </ul>
-
-  <h2>Nuclear Power Around the World</h2>
-
-  <p>
-    According to the International Atomic Energy Agency (IAEA), there are currently 443 operating nuclear reactors in the world. The United States has the most operating reactors with 93, followed by France with 56 and China with 50.
-  </p>
-
-  <h2>Nuclear Power in the United States</h2>
-
-  <p>
-    According to the U.S. Energy Information Administration (EIA), nuclear power accounted for about 20% of total electricity generation in the United States in 2020. The United States has the largest installed nuclear capacity of any country in the world.
-  </p>
-`;
-      var body1 = "This is my first paragraph.";
-      var body2 = "This is my second paragraph.";
-      var conclusion = "This is my conclusion.";
+      fetch('src/intro.txt')
+        .then(response => response.text())
+        .then(data => {
+          var intro = data;
+        });
+      fetch('src/body1.txt')
+        .then(response => response.text())
+        .then(data => {
+          var body1 = data;
+        });
+      fetch('src/body2.txt')
+        .then(response => response.text())
+        .then(data => {
+          var body2 = data;
+        });
+      fetch('src/conclusion.txt')
+        .then(response => response.text())
+        .then(data => {
+          var conclusion = data;
+        });
 
       document.getElementById("intro").innerHTML = intro;
       document.getElementById("body1").innerHTML = body1;
@@ -54,11 +34,12 @@
 </head>
 
 <body onload="createContent()">
-  <h1>My Page</h1>
-  <div id="intro"></div>
-  <div id="body1"></div>
-  <div id="body2"></div>
-  <div id="conclusion"></div>
+  <style>
+  #intro {font-family: "Lora", serif;}
+  #body1 {font-family: "Lora", serif;}
+  #body2 {font-family: "Lora", serif;}
+  #conclusion {font-family: "Lora", serif;}
+</style>
 </body>
 
 </html>

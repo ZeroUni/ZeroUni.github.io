@@ -1,20 +1,10 @@
 <!DOCTYPE html>
 <html>
-<body>
-
-<h1>My First JavaScript</h1>
-
-<button type="button" onclick="myFunction()">Click me</button>
-
-<p id="demo"></p>
-
-<script>
-const myDiv = document.createElement('div');
-myDiv.innerHTML = myHTML;
-document.body.appendChild(myDiv);
-
-const nuclearPowerIntro = document.createElement('div');
-nuclearPowerIntro.innerHTML = `
+<head>
+  <title>My Page</title>
+  <script>
+    function createContent() {
+      var intro = `
   <h1>Nuclear Power Intro</h1>
 
   <p>
@@ -51,8 +41,24 @@ nuclearPowerIntro.innerHTML = `
     According to the U.S. Energy Information Administration (EIA), nuclear power accounted for about 20% of total electricity generation in the United States in 2020. The United States has the largest installed nuclear capacity of any country in the world.
   </p>
 `;
-document.body.appendChild(nuclearPowerIntro);
-</script>
+      var body1 = "This is my first paragraph.";
+      var body2 = "This is my second paragraph.";
+      var conclusion = "This is my conclusion.";
 
+      document.getElementById("intro").innerHTML = intro;
+      document.getElementById("body1").innerHTML = body1;
+      document.getElementById("body2").innerHTML = body2;
+      document.getElementById("conclusion").innerHTML = conclusion;
+    }
+  </script>
+</head>
+
+<body onload="createContent()">
+  <h1>My Page</h1>
+  <div id="intro"></div>
+  <div id="body1"></div>
+  <div id="body2"></div>
+  <div id="conclusion"></div>
 </body>
+
 </html>

@@ -1,34 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Page</title>
+  <title>Nuclear Energy</title>
   <script>
     function createContent() {
       fetch('src/intro.txt')
         .then(response => response.text())
         .then(data => {
           var intro = data;
+          document.getElementById("intro").outerHTML = intro;
         });
       fetch('src/body1.txt')
         .then(response => response.text())
         .then(data => {
           var body1 = data;
+          document.getElementById("body1").outerHTML = body1;
         });
       fetch('src/body2.txt')
         .then(response => response.text())
         .then(data => {
           var body2 = data;
+          document.getElementById("body2").outerHTML = body2;
         });
       fetch('src/conclusion.txt')
         .then(response => response.text())
         .then(data => {
           var conclusion = data;
+          document.getElementById("conclusion").outerHTML = conclusion;
         });
-
-      document.getElementById("intro").innerHTML = intro;
-      document.getElementById("body1").innerHTML = body1;
-      document.getElementById("body2").innerHTML = body2;
-      document.getElementById("conclusion").innerHTML = conclusion;
     }
   </script>
 </head>

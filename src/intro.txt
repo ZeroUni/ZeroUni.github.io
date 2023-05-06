@@ -1,9 +1,6 @@
-<h1>#Why Clean Energy?</h1>
+<h1><strong><b>
+Why Clean Energy?</b></strong></h1>
 
-<p>As you know, our world is facing a climate crisis. The burning of fossil fuels such as coal, oil and natural gas, is releasing greenhouse gasses into the atmosphere, leading toward the raising of Earth’s natural temperature. This is leading to more extreme weather events, rising sea levels, and other environmental problems.</p>
-
-<p>But there is one clean energy source that stands out for its advantages and challenges: nuclear energy. Nuclear energy is the energy that comes from splitting uranium atoms to produce heat and electricity. It is the largest source of clean power in the United States, generating nearly 800 billion kilowatt hours of electricity each year and avoiding more than 470 million metric tons of carbon dioxide emissions[1]. It also supports nearly half a million jobs and contributes to many non-electric applications, such as medicine and space exploration.</p>
-
-<p>However, nuclear energy also faces some obstacles, such as public awareness, used fuel management, and cost competitiveness. These challenges require innovative solutions and continuous research and development to ensure the safety, sustainability, and affordability of nuclear energy.</p>
-
-<p>So, why clean energy? Because it can help us create a better world for ourselves and future generations. And why nuclear energy? Because it contributes to our clean energy mix, is much more efficient than alternatives, creates economic opportunities, and enhances national security. In this presentation, we will discuss these benefits in more detail and show you how nuclear energy can be a game-changer for our future.</p>
+<p> 
+ 
+As you know, our world is facing a climate crisis. The burning of fossil fuels such as coal, oil and natural gas, is releasing greenhouse gasses into the atmosphere, leading toward the raising of Earth’s natural temperature. This is leading to more extreme weather events, rising sea levels, and other environmental problems.</p>

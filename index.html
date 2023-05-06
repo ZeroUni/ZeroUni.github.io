@@ -16,31 +16,80 @@
         -1px 1px 0 #000,
         1px 1px 0 #000;
       color: rgb(32, 175, 168);
-      padding-top: 50px;
+      padding-top: 25px;
       padding-bottom: 25px;
+      
+    }
+    /* Create the temporary full screen class */
+    .lorah1Fullscreen {
+      font-size: clamp(24px, 5vw, 48px);
+      text-shadow: 
+        -2px -2px 2px #000,
+        2px -2px 2px #000,
+        -2px 2px 2px #000,
+        2px 2px 2px #000;
+      color: rgb(0, 209, 199);
+      padding-top: 25px;
+      padding-bottom: 25px;
+      /* Make the div take up the full screen with a 1 second transition */
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: lime; /* Just to visualize the extent */
+      /* Make this div slowly get smaller as the user scrolls down */
+      /*Animations*/
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease;  
     }
     /* Set the specific styles for each section */
     #intro {
       background-image: url('./src/minimalLogo2.jpg');
       background-color: transparent;
       min-height: 200px;
-      max-height: 200vh;
+      max-height: 250vh;
       height: auto;
       background-position: center;
       background-repeat: no-repeat;
-      background-size: cover;
+      background-size: 100% 100%;
       text-align: center;
-      
+      /* Make the background image cover completely horizontally */
+      margin: 0px 0px 0px 0px;
+      border: 5px solid rgb(154, 242, 243);
+      border-radius: 25px;
+      padding: 25px;
+      /* Make the border fade into the background */
+      box-shadow: 0px 0px 25px 25px rgb(32, 175, 168);
     }
     #body1, #body2, #conclusion {
       min-height: 100px;
       max-height: 300vh;
       height: auto;
+      white-space: pre-wrap;
+      /* Add a small amount of margin to the sides that expands with the browser size */
+      margin: 0px clamp(5px, 5vw, 150px) 0px clamp(5px, 5vw, 150px);
+      /* Reduce the vertical space between paragraphs */
+      line-height: 1.5;
+      
     }
   </style>
 </head>
 <body>
-  <div id="intro" class="lorah1"></div>
+    <!--Set the body background too the looping minimalBackground.jpg-->
+  <style>
+    body {
+      margin: 0px 0px 0px 0px;
+      background-image: url('./src/minimalBackground.jpg');
+      background-color: transparent;
+      height: auto;
+      background-position: center;
+      background-size: cover;
+    }
+  </style>
+  <div id="intro" class="lorah1Fullscreen"></div>
   <div id="body1" class="lorah1"></div>
   <div id="body2" class="lora"></div>
   <div id="conclusion" class="lora"></div>
@@ -73,5 +122,25 @@
       });
   }
   window.onload = createContent;
+  // Define a function to change the class
+  function changeClass() {
+    // Get the current scroll position
+    var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Check if the scroll position is more than 50 pixels
+    if (scrollPos > 50) {
+      // Add the lora class to the div with id="intro"
+      intro.classList.add("lorah1");
+      // Remove the temporary full screen class
+      intro.classList.remove("lorah1Fullscreen");
+    } else {
+      // Remove the new class from the div
+      intro.classList.remove("lorah1");
+      // Add the temporary full screen class
+      intro.classList.add("lorah1Fullscreen");
+    }
+  }
+  // Attach the function to the onscroll event
+  window.onscroll = changeClass;
 </script>
 </html>

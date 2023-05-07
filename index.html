@@ -7,19 +7,15 @@
     .lora {
       font-family: Lora;
       font-size: clamp(12px, 2.5vw, 24px);
-    }
-    .lorah1 {
-      font-size: clamp(24px, 5vw, 48px);
       text-shadow: 
-        -1px -1px 0 #000,
-        1px -1px 0 #000,
-        -1px 1px 0 #000,
-        1px 1px 0 #000;
-      color: rgb(32, 175, 168);
-      padding-top: 25px;
-      padding-bottom: 25px;
-      
+        -2px -2px 2px #000,
+        2px -2px 2px #000,
+        -2px 2px 2px #000,
+        2px 2px 2px #000;    }
+    .hidden {
+      display: none;
     }
+
     /* Create the temporary full screen class */
     .lorah1Fullscreen {
       font-size: clamp(24px, 5vw, 48px);
@@ -44,6 +40,10 @@
       -moz-transition: all 0.5s ease;
       -o-transition: all 0.5s ease;
       transition: all 0.5s ease;  
+      /* Make the border fade into the background */
+      -webkit-mask-image: -webkit-gradient(linear, center top, center bottom, color-stop(0.50, rgba(0,0,0,1)), color-stop(1.00, rgba(0,0,0,0)));
+      mask-image: -webkit-gradient(linear, center top, center bottom, color-stop(0.50, rgba(0,0,0,1)), color-stop(1.00, rgba(0,0,0,0)));
+
     }
     /* Set the specific styles for each section */
     #intro {
@@ -58,11 +58,9 @@
       text-align: center;
       /* Make the background image cover completely horizontally */
       margin: 0px 0px 0px 0px;
-      border: 5px solid rgb(154, 242, 243);
+      border: 2px solid transparent;
       border-radius: 25px;
       padding: 25px;
-      /* Make the border fade into the background */
-      box-shadow: 0px 0px 25px 25px rgb(32, 175, 168);
     }
     #body1, #body2, #conclusion {
       min-height: 100px;
@@ -90,9 +88,9 @@
     }
   </style>
   <div id="intro" class="lorah1Fullscreen"></div>
-  <div id="body1" class="lorah1"></div>
-  <div id="body2" class="lora"></div>
-  <div id="conclusion" class="lora"></div>
+  <div id="body1" class="hidden"></div>
+  <div id="body2" class="hidden"></div>
+  <div id="conclusion" class="hidden"></div>
 </body>
 <script>
   function createContent() {

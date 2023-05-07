@@ -41,10 +41,9 @@
       -o-transition: all 0.5s ease;
       transition: all 0.5s ease;  
       /* Make the border fade into the background */
-      -webkit-mask-image: -webkit-gradient(linear, center top, center bottom, color-stop(0.50, rgba(0,0,0,1)), color-stop(1.00, rgba(0,0,0,0)));
-      mask-image: -webkit-gradient(linear, center top, center bottom, color-stop(0.50, rgba(0,0,0,1)), color-stop(1.00, rgba(0,0,0,0)));
-
-    }
+      -webkit-mask-image: -webkit-radial-gradient(ellipse 100% 80%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
+      mask-image: -webkit-radial-gradient(ellipse 100% 80%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
+      }
     /* Set the specific styles for each section */
     #intro {
       background-image: url('./src/minimalLogo2-4k.jpeg');
@@ -80,7 +79,7 @@
   <style>
     body {
       margin: 0px 0px 0px 0px;
-      background-image: url('./src/minimalBackground.jpg');
+      background-image: url('./src/minimalBackground-2k.jpg');
       background-color: transparent;
       height: auto;
       background-position: center;

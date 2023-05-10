@@ -41,11 +41,11 @@
       -o-transition: all 0.5s ease;
       transition: all 0.5s ease;  
       /* Make the border fade into the background */
-      -webkit-mask-image: -webkit-radial-gradient(ellipse 100% 80%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
-      mask-image: -webkit-radial-gradient(ellipse 100% 80%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
+      -webkit-mask-image: -webkit-radial-gradient(ellipse, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%); 
+      mask-image: -webkit-radial-gradient(ellipse, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
       }
     /* Set the specific styles for each section */
-    #intro {
+    #body1 {
       background-image: url('./src/minimalLogo2-4k.jpeg');
       background-color: transparent;
       min-height: 200px;
@@ -61,7 +61,7 @@
       border-radius: 25px;
       padding: 25px;
     }
-    #body1, #body2, #conclusion {
+    #body2, #conclusion {
       min-height: 100px;
       max-height: 300vh;
       height: auto;
@@ -86,43 +86,43 @@
       background-size: cover;
     }
   </style>
-  <div id="intro" class="lorah1Fullscreen"></div>
-  <div id="body1" class="hidden"></div>
+  <!--Create the divs for each section-->
+  <div id="body1" class="lorah1Fullscreen"></div>
   <div id="body2" class="hidden"></div>
+  <div id="body3" class="hidden"></div>
+  <div id="body4" class="hidden"></div>
+  <div id="body5" class="hidden"></div>
   <div id="conclusion" class="hidden"></div>
+
 </body>
 <script>
   function createContent() {
-    fetch('src/intro.txt')
+    // Grab the src/body directory as a variable
+    var testFolder = 'src/body/';
+    // Make an array of all the files in the directory
+    var bodyFiles = ["body1.txt", "body2.txt", "body3.txt", "body4.txt", "body5.txt", "conclusion.txt"];
+
+    bodyFiles.forEach((bodyFile) => {
+      // Find the file equivalent to the current index, and create a div named after it containing its contents
+      var bodyDiv = document.getElementById(bodyFile.replace(".txt", ""));
+      // Set the id equal to the name of the file without the extension
+      fetch(testFolder + bodyFile)
       .then(response => response.text())
       .then(data => {
-        var intro = data;
-        document.getElementById("intro").innerHTML = intro;
+        bodyDiv.innerHTML = data;
+        // Append the created div to the body
+        document.body.appendChild(bodyDiv);
       });
-    fetch('src/body1.txt')
-      .then(response => response.text())
-      .then(data => {
-        var body1 = data;
-        document.getElementById("body1").innerHTML = body1;
-      });
-    fetch('src/body2.txt')
-      .then(response => response.text())
-      .then(data => {
-        var body2 = data;
-        document.getElementById("body2").innerHTML = body2;
-      });
-    fetch('src/conclusion.txt')
-      .then(response => response.text())
-      .then(data => {
-        var conclusion = data;
-        document.getElementById("conclusion").innerHTML = conclusion;
-      });
+    });
   }
+
+
   window.onload = createContent;
   // Define a function to change the class
   function changeClass() {
     // Get the current scroll position
     var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+    var intro = document.getElementById("body1");
 
     // Check if the scroll position is more than 50 pixels
     if (scrollPos > 50) {

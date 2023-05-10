@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Why Clean Energy?</title>
+</head>
+<body>
+    <h2><strong>Why Clean Energy?</strong></h2>
+    <hr>
+    <ul>
+        <li>Our world is facing a climate crisis due to the burning of fossil fuels.</li>
+        <li>Nuclear energy, a clean energy source, comes from splitting uranium atoms to generate electricity.</li>
+        <li>It is the largest source of clean power in the United States and contributes to various non-electric applications, such as medicine and space exploration.</li>
+        <li>Despite some obstacles, nuclear energy is a game-changer for our future.</li>
+    </ul>
+</body>
+</html>

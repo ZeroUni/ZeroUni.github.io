@@ -1,2 +1,15 @@
-<h2>Cost Effectiveness</h2>
-<p>Though nuclear power plants are expensive to build, their low operating costs and tremendous electricity output outweigh the investment. Nuclear power has low carbon emissions and can maintain relatively low fuel costs despite fluctuations in uranium prices.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cost Effectiveness</title>
+</head>
+<body>
+    <h2><strong>Cost Effectiveness</strong></h2>
+    <hr>
+    <ul>
+        <li>Though nuclear power plants are expensive to build, their low operating costs and tremendous electricity output outweigh the investment.</li>
+        <li>Nuclear power has low carbon emissions and can maintain relatively low fuel costs despite fluctuations in uranium prices.</li>
+    </ul>
+</body>
+</html>

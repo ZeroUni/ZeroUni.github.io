@@ -1,2 +1,14 @@
-<h2>Safety of Nuclear Power</h2>
-<p>While accidents like Chernobyl, Fukushima, and Three Mile Island are often associated with nuclear energy, these incidents were due to abnormal circumstances. With proper reactor design, trained staff, and safety measures, nuclear power can be a safe and reliable energy source.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Safety of Nuclear Power</title>
+</head>
+<body>
+    <h2>Safety of Nuclear Power</h2>
+    <p>While accidents like Chernobyl, Fukushima, and Three Mile Island are often associated with nuclear energy, these incidents were due to abnormal circumstances. With proper reactor design, trained staff, and safety measures, nuclear power can be a:</p>
+    <ul>
+        <li>Safe and reliable energy source.</li>
+    </ul>
+</body>
+</html>

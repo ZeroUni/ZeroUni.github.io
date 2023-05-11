@@ -14,6 +14,12 @@
         2px 2px 2px #000;    }
     .hidden {
       display: none;
+      /* Make the div size 0px */
+      height: 0px;
+      width: 0px;
+      /* Make the div take up no space */
+      margin: 0px 0px 0px 0px;
+      padding: 0px 0px 0px 0px;
     }
 
     /* Create the temporary full screen class */
@@ -27,25 +33,6 @@
       color: rgb(0, 209, 199);
       padding-top: 25px;
       padding-bottom: 25px;
-      /* Make the div take up the full screen with a 1 second transition */
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: lime; /* Just to visualize the extent */
-      /* Make this div slowly get smaller as the user scrolls down */
-      /*Animations*/
-      -webkit-transition: all 0.5s ease;
-      -moz-transition: all 0.5s ease;
-      -o-transition: all 0.5s ease;
-      transition: all 0.5s ease;  
-      /* Make the border fade into the background */
-      -webkit-mask-image: -webkit-radial-gradient(ellipse, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%); 
-      mask-image: -webkit-radial-gradient(ellipse, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
-      }
-    /* Set the specific styles for each section */
-    #body1 {
       background-image: url('./src/minimalLogo2-4k.jpeg');
       background-color: transparent;
       min-height: 200px;
@@ -60,18 +47,24 @@
       border: 2px solid transparent;
       border-radius: 25px;
       padding: 25px;
-    }
-    #body2, #conclusion {
-      min-height: 100px;
-      max-height: 300vh;
-      height: auto;
-      white-space: pre-wrap;
-      /* Add a small amount of margin to the sides that expands with the browser size */
-      margin: 0px clamp(5px, 5vw, 150px) 0px clamp(5px, 5vw, 150px);
-      /* Reduce the vertical space between paragraphs */
-      line-height: 1.5;
-      
-    }
+      /* Make the div take up the full screen with a 1 second transition */
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      /* Make this div slowly get smaller as the user scrolls down */
+      /*Animations
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease;*/
+      /* Make the border fade into the background */
+      -webkit-mask-image: -webkit-radial-gradient(ellipse, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%); 
+      mask-image: -webkit-radial-gradient(ellipse, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+      display: initial;
+      }
+
   </style>
 </head>
 <body>
@@ -92,7 +85,7 @@
   <div id="body3" class="hidden"></div>
   <div id="body4" class="hidden"></div>
   <div id="body5" class="hidden"></div>
-  <div id="conclusion" class="hidden"></div>
+  <div id="body6" class="hidden"></div>
 
 </body>
 <script>
@@ -100,7 +93,7 @@
     // Grab the src/body directory as a variable
     var testFolder = 'src/body/';
     // Make an array of all the files in the directory
-    var bodyFiles = ["body1.txt", "body2.txt", "body3.txt", "body4.txt", "body5.txt", "conclusion.txt"];
+    var bodyFiles = ["body1.txt", "body2.txt", "body3.txt", "body4.txt", "body5.txt", "body6.txt"];
 
     bodyFiles.forEach((bodyFile) => {
       // Find the file equivalent to the current index, and create a div named after it containing its contents
@@ -119,25 +112,52 @@
 
   window.onload = createContent;
   // Define a function to change the class
+  var currentDiv = 1;
+  var cooldown = false;
+  var scrollDebug = document.getElementById("body1");
   function changeClass() {
-    // Get the current scroll position
-    var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
-    var intro = document.getElementById("body1");
-
-    // Check if the scroll position is more than 50 pixels
-    if (scrollPos > 50) {
-      // Add the lora class to the div with id="intro"
-      intro.classList.add("lorah1");
-      // Remove the temporary full screen class
-      intro.classList.remove("lorah1Fullscreen");
-    } else {
-      // Remove the new class from the div
-      intro.classList.remove("lorah1");
-      // Add the temporary full screen class
-      intro.classList.add("lorah1Fullscreen");
+    var scrollPos = window.pageYOffset;
+    var setDiv = currentDiv;
+    scrollDebug.innerHTML = "<h1>"+scrollPos+"</h1>";
+    document.body.appendChild(scrollDebug);
+    // If the cooldown is active, do nothing
+    if (cooldown) {
+      return;
     }
+    cooldown = true;
+    // Get the current scroll position
+    
+    
+    // As the user scrolls down, cycle through the div being currently set as fullscreen
+    if (scrollPos < 20) {
+      currentDiv = Math.min(currentDiv + 1, 6);
+    } else if (scrollPos > 30) {
+      currentDiv = Math.max(currentDiv - 1, 1);
+    }
+    // If the div has not changed, do nothing
+    if (currentDiv == setDiv) {
+      return;
+    }
+    var currentDivName = "body" + String(currentDiv);
+    var currentDivDoc = document.getElementById(currentDivName);
+    // Remove the hidden class from the current div
+    currentDivDoc.classList.remove("hidden");
+    // Set the current div to fullscreen
+    currentDivDoc.classList.add("lorah1Fullscreen");
+    // Remove the fullscreen class from the previous div
+    var previousDivName = "body" + String(setDiv);
+    var previousDivDoc = document.getElementById(previousDivName);
+    previousDivDoc.classList.remove("lorah1Fullscreen");
+    previousDivDoc.classList.remove("hidden");
+    previousDivDoc.classList.remove("lorah1Fullscreen");
+    // Add the hidden class to the previous div
+    previousDivDoc.classList.add("hidden");
+    // Set the cooldown to false after 1 second
+    setTimeout(function() {
+      cooldown = false;
+    }, 1000);
   }
   // Attach the function to the onscroll event
-  window.onscroll = changeClass;
+  window.addEventListener('scroll', changeClass);
 </script>
 </html>

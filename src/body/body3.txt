@@ -1,2 +1,16 @@
-<h2>The Power of the Sun in the Palm of My Hand</h2>
-<p>Nuclear fusion is a promising clean energy source with recent advances in technology. It is more efficient and cleaner than current sources, and uses deuterium-tritium fuel found in nature. Fusion energy is dense, inexpensive, and generates minimal byproducts.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Power of the Sun in the Palm of My Hand</title>
+</head>
+<body>
+    <h2><strong>The Power of the Sun in the Palm of My Hand</strong></h2>
+    <hr>
+    <ul>
+        <li>Nuclear fusion is a promising clean energy source with recent advances in technology.</li>
+        <li>It is more efficient and cleaner than current sources, and uses deuterium-tritium fuel found in nature.</li>
+        <li>Fusion energy is dense, inexpensive, and generates minimal byproducts.</li>
+    </ul>
+</body>
+</html>

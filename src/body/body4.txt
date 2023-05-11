@@ -1,2 +1,15 @@
-<h2>Conservation of Natural Resources</h2>
-<p>Shifting to nuclear energy can help reduce our dependency on oil, natural gas, and coal. This transition will help conserve natural resources and reduce the environmental impacts associated with traditional energy sources.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conservation of Natural Resources</title>
+</head>
+<body>
+    <h2><strong>Conservation of Natural Resources</strong></h2>
+    <hr>
+    <ul>
+        <li>Shifting to nuclear energy can help reduce our dependency on oil, natural gas, and coal.</li>
+        <li>This transition will help conserve natural resources and reduce the environmental impacts associated with traditional energy sources.</li>
+    </ul>
+</body>
+</html>
